@@ -270,6 +270,7 @@ class VCFDB(object):
             if self.sample_idxs is not None:
                 for c in self.gt_cols:
                     # named gt_bases in cyvcf2 and gts in db
+                    print(f"variant: {v}, gt_col: {c}")
                     arr = v.gt_bases if c == "gts" else getattr(v, c, None)
                     if arr is not None and must_idx:
                         arr = arr[self.sample_idxs]
